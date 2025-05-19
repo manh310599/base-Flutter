@@ -1,0 +1,104 @@
+lib/
+  ├── app/
+  │   ├── app.dart              // Root Widget của app
+  │   ├── routes.dart           // Định nghĩa routes với go_router
+  │   ├── di/                   // Dependency Injection
+  │   │   ├── injection.dart    // Setup GetIt
+  │   │   └── injection.config.dart  // Auto-generated
+  │   ├── theme/                // Theme app
+  │   │   ├── app_colors.dart
+  │   │   ├── app_text_styles.dart
+  │   │   └── app_theme.dart
+  │   └── config/
+  │       ├── app_config.dart   // Cấu hình theo môi trường
+  │       ├── environment.dart  // Dev/Staging/Prod
+  │       └── flavor_config.dart
+  │
+  ├── core/                     // Core functionality
+  │   ├── api/
+  │   │   ├── api_client.dart   // Base API client
+  │   │   ├── interceptors/
+  │   │   │   ├── auth_interceptor.dart
+  │   │   │   ├── logging_interceptor.dart
+  │   │   │   └── cache_interceptor.dart
+  │   │   └── error/
+  │   │       ├── api_error.dart
+  │   │       └── error_handler.dart
+  │   ├── storage/
+  │   │   ├── secure_storage.dart
+  │   │   └── local_storage.dart
+  │   ├── security/
+  │   │   ├── biometrics_service.dart
+  │   │   └── encryption_service.dart
+  │   ├── network/
+  │   │   ├── network_info.dart
+  │   │   └── connectivity_service.dart
+  │   ├── utils/
+  │   │   ├── extensions/
+  │   │   │   ├── string_extensions.dart
+  │   │   │   └── date_extensions.dart
+  │   │   └── validators/
+  │   │       ├── account_validators.dart
+  │   │       └── transaction_validator.dart
+  │   └── widgets/
+  │       ├── app_button.dart
+  │       ├── app_text_field.dart
+  │       └── loading_overlay.dart
+  │
+  ├── data/                     // Data Layer
+  │   ├── repositories/         // Implement từ domain layer
+  │   │   ├── auth_repository_impl.dart
+  │   │   └── transaction_repository_impl.dart
+  │   ├── datasources/
+  │   │   ├── local/
+  │   │   │   ├── auth_local_datasource.dart
+  │   │   │   └── transaction_local_datasource.dart
+  │   │   └── remote/
+  │   │       ├── auth_remote_datasource.dart
+  │   │       └── transaction_remote_datasource.dart
+  │   └── models/               // DTOs
+  │       ├── user_model.dart
+  │       └── transaction_model.dart
+  │
+  ├── domain/                   // Domain Layer
+  │   ├── entities/
+  │   │   ├── user.dart
+  │   │   └── transaction.dart
+  │   ├── repositories/         // Abstract classes
+  │   │   ├── auth_repository.dart
+  │   │   └── transaction_repository.dart
+  │   └── usecases/
+  │       ├── auth/
+  │       │   ├── login_usecase.dart
+  │       │   └── logout_usecase.dart
+  │       └── transaction/
+  │           ├── get_transactions_usecase.dart
+  │           └── make_transfer_usecase.dart
+  │
+  ├── presentation/             // Presentation Layer
+  │   ├── auth/                 // Feature 1: Authentication
+  │   │   ├── cubit/
+  │   │   │   ├── auth_cubit.dart
+  │   │   │   └── auth_state.dart
+  │   │   ├── pages/
+  │   │   │   ├── login_page.dart
+  │   │   │   └── otp_verification_page.dart
+  │   │   └── widgets/
+  │   │       └── biometric_button.dart
+  │   ├── home/                 // Feature 2: Home
+  │   │   ├── cubit/
+  │   │   │   ├── home_cubit.dart
+  │   │   │   └── home_state.dart
+  │   │   └── pages/
+  │   │       └── home_page.dart
+  │   └── transactions/         // Feature 3: Transactions
+  │       ├── cubit/
+  │       │   ├── transaction_cubit.dart
+  │       │   └── transaction_state.dart
+  │       ├── pages/
+  │       │   ├── transaction_history_page.dart
+  │       │   └── transfer_page.dart
+  │       └── widgets/
+  │           └── transaction_item.dart
+  │
+  └── main.dart
